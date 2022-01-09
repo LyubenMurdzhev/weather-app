@@ -1,0 +1,55 @@
+/* HERO */
+
+.hero-container {
+  /*Position*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*Size*/
+  min-height: 25rem;
+  width: 30%;
+  /*Misc*/
+  background-color: rgba(31, 31, 31, 0.9);
+  color: #ffffff;
+}
+
+.header,
+.date-container {
+  /*Position*/
+  text-align: center;
+  /*Size*/
+  /*Misc*/
+}
+
+.weather-icon {
+  /*Position*/
+  /*Size*/
+  /*Misc*/
+  min-height: 100px;
+  min-width: 100px;
+}
+
+/****** Media Queries ******/
+
+/* 0px - 688px */
+@media screen and (max-width: 688px) {
+  .hero-container {
+    width: 80%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+/* 689px - 991px*/
+@media screen and (min-width: 689px) and (max-width: 991px) {
+  .hero-container {
+    /*Position*/
+    /*Size*/
+    width: 70%;
+    min-height: 20rem;
+    /*Misc*/
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}

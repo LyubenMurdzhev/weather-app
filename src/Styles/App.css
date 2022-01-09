@@ -9,17 +9,8 @@
   height: 100vh;
   width: 100vw;
   /*Misc*/
-  background: rgb(38, 33, 33);
-  background: linear-gradient(
-    90deg,
-    rgba(38, 33, 33, 1) 0%,
-    rgba(51, 49, 49, 1) 100%
-  );
+  /*  */
 }
-
-/*Position*/
-/*Size*/
-/*Misc*/
 
 .container {
   /* Position */
@@ -37,61 +28,71 @@
   overflow: hidden;
 }
 
-/* Hero Component */
-
-.hero-container {
-  background-color: darkcyan;
-  display: flex;
-  justify-content: center;
-  min-height: 25rem;
-  width: 30%;
+/*////////////////////////////////////   Backgrounds  /////////*/
+.background-default {
+  background: rgb(38, 33, 33);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 33, 33, 1) 0%,
+    rgba(51, 49, 49, 1) 100%
+  );
 }
 
-.header {
-  margin-top: 100px;
+.background-Clear {
+  background-image: url("../Images/clear.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* MainInfo Component */
-
-.info-container {
-  background-color: darkorange;
-  min-height: 25rem;
-  width: 70%;
+.background-Clouds {
+  background-image: url("../Images/clouds.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.srch-container {
-  padding: 2rem;
-  display: flex;
+.background-Dust,
+.background-Sand,
+.background-Ash {
+  background-image: url("../Images/dust-sand-ash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.main-info-container {
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  gap: 1.5rem;
-  padding: 0 2rem;
+.background-Mist {
+  background-image: url("../Images/mist.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-Rain,
+.background-Drizzle,
+.background-Fog {
+  background-image: url("../Images/rain-drizzle-fog.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-Smoke,
+.background-Haze {
+  background-image: url("../Images/smoke-haze.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-Snow {
+  background-image: url("../Images/snow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-Thunderstorm,
+.background-Tornado {
+  background-image: url("../Images/thunderstorm-tornado.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.item {
-  border-bottom: 1px solid blue;
-}
+/****** Media Queries ******/
 
-@media screen and (max-width: 815px) {
+/*  0px - 688px  */
+@media screen and (max-width: 688px) {
   .container {
     flex-direction: column;
-  }
-
-  .hero-container {
-    width: 60%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-
-  .info-container {
-    width: 60%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-
-  .main-info-container {
   }
 }

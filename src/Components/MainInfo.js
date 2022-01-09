@@ -1,25 +1,45 @@
 import React from "react";
-import "../Styles/MainInfo.css"; // Styles
+import '../Styles/MainInfo.css';
 
 // Components
+import SearchForm from "./SearchForm";
 
 function MainInfo({
-
+    city,
+    country,
+    humidity,
+    weather,
+    temp,
+    setQuery,
+    query,
+    getWeather,
+    error
 }) {
-
 
 return (
 
 <div className="info-container">
-    <div className="srch-container">
-        <input type="text" className="input" />
-    </div>
-    <div className="main-info-container">
-        <div className="item location">Location:</div>
-        <div className="item temp">Temperature:</div>
-        <div className="item weather">Weather:</div>
-        <div className="item humidity">Humidity:</div>
-    </div>
+    <SearchForm
+        setQuery={setQuery}
+        getWeather={getWeather}
+        query={query}
+        
+     />
+    {(city) ? (
+        <div className="main-info-container">
+            <div className="item location"><span>Location: </span>{city}, {country}</div>
+            <div className="item temp"><span>Temperature: </span>{temp} &deg;</div>
+            <div className="item weather"><span>Weather: </span>{weather}</div>
+            <div className="item humidity"><span>Humidity: </span>{humidity}%</div>
+        </div>
+    ) : (
+        <div className="error-container">
+            <div className="error-message" text-transform="capitalize">
+                {error}
+            </div>
+         </div>
+    )
+    }
 </div>
 );
 }

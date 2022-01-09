@@ -1,0 +1,74 @@
+/* SEARCH FORM */
+
+.srch-container {
+  /*Position*/
+  display: flex;
+  padding: 2rem;
+  /*Size*/
+  /*Misc*/
+  overflow: hidden;
+}
+
+.input-field {
+  /*Position*/
+  /*Size*/
+  height: 2rem;
+  /*Misc*/
+  background-color: rgba(255, 255, 255, 0.03);
+  border: none;
+  color: #fff;
+}
+
+.input-field:focus {
+  /*Position*/
+  /*Size*
+    /*Misc*/
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.srch-btn {
+  /*Position*/
+  /*Size*/
+  min-width: 50px;
+  /*Misc*/
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  border: none;
+}
+
+.srch-btn:hover {
+  /*Position*/
+  /*Size*/
+  /*Misc*/
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+/****** Media Queries ******/
+
+/* 0px - 688px */
+@media screen and (max-width: 688px) {
+  .srch-container {
+    /*Position*/
+    padding: 2rem 0.5rem;
+    flex-direction: column;
+    /*Size*/
+    /*Misc*/
+  }
+
+  .srch-btn {
+    /*Position*/
+    margin-top: 1rem;
+    /*Size*/
+    height: 3rem;
+    /*Misc*/
+  }
+}
+
+/* 689px - 991px*/
+@media screen and (min-width: 689px) and (max-width: 991px) {
+  .srch-container {
+    justify-content: center;
+  }
+}
