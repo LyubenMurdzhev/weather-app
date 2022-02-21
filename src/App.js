@@ -76,6 +76,8 @@ function App() {
   const [latitude, setLatitude] = useState(null);
   const [backgroundClass, setBackgroundClass] = useState("default");
   var arrOfCities = [];
+  var uniqueCities = [];
+  var isMultipleCities = false;
 
 
   /* Initial current geolocation and weather */
@@ -116,38 +118,39 @@ function App() {
   const getWeather = async (e) => {
     e.preventDefault();
 
-    const api_call_check = await fetch(`${api.urlMultipleLocations}?q=${query}&limit=5&units=metric&appid=${api.key}`);
+    console.log(`${api.urlMultipleLocations}?q=${query}&limit=5&units=metric&lang=en&appid=${api.key}`);
+    const api_call_check = await fetch(`${api.urlMultipleLocations}?q=${query}&limit=5&units=metric&lang=en&appid=${api.key}`);
     const data_check = await api_call_check.json();
     console.log(data_check);
 
-    if(data_check[1]) {
-
+    /*Check wether there are multiple cities with the filled name */
+    if(data_check.length > 1) {
+      isMultipleCities = true;
       for (let i = 0; i < 5; i++) {
         arrOfCities[i] = {
           name: data_check[i].name,
+          state: data_check[i].state,
           country: data_check[i].country
         }
-       // var newArray = arrOfCities.push(newCityObj);
-      //  arrOfCities = newArray;
-       
-        var uniqueCities = [...new Set(arrOfCities)];
-        console.log(uniqueCities);
       }
+      console.log(arrOfCities);
+      var uniqueCities = [...new Map(arrOfCities.map((item) => [item["name","country"], item])).values()];
+      console.log(uniqueCities);
     } else {
+      isMultipleCities = false;
       const api_call = await fetch(`${api.urlWeather}?q=${query}&units=metric&appid=${api.key}`);
-    const data = await api_call.json();
+      const data = await api_call.json();
 
-      if (false) {
+      if (data) {
         setCity(data.name);
         setCountry(data.sys.country);
         setTemp(Math.round(data.main.temp));
         setHumidity(data.main.humidity)
         setWeather(data.weather[0].description);
-        setQuery(""); // Reset the search bar
+        setQuery(""); 
         setUrlIcon(WeatherIconsUrl[`${data.weather[0].icon}`]);
         setPathIcon(`i${ data.weather[0].icon}`);
-        console.log(setPathIcon);
-        setBackgroundClass(data.weather[0].main); //Background 
+        setBackgroundClass(data.weather[0].main); 
       } 
       else {
         setError(data.message);
@@ -156,9 +159,6 @@ function App() {
         setBackgroundClass("default");
       }
     }
-    
-   
-    
   }
 
   return (
@@ -174,6 +174,7 @@ function App() {
           pathIcon={pathIcon}
         />
         <MainInfo 
+          isMultipleCities={isMultipleCities}
           query={query}
           setQuery={setQuery}
           getWeather={getWeather}
