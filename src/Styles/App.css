@@ -9,7 +9,6 @@
   height: 100vh;
   width: 100vw;
   /*Misc*/
-  /*  */
 }
 
 .container {
@@ -28,7 +27,7 @@
   overflow: hidden;
 }
 
-/*////////////////////////////////////   Backgrounds  /////////*/
+/* Backgrounds */
 .background-default {
   background: rgb(38, 33, 33);
   background: linear-gradient(
@@ -39,13 +38,13 @@
 }
 
 .background-Clear {
-  background-image: url("../Images/clear.png");
+  background-image: url("../Images/clear.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .background-Clouds {
-  background-image: url("../Images/clouds.png");
+  background-image: url("../Images/clouds.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -59,14 +58,14 @@
 }
 
 .background-Mist {
-  background-image: url("../Images/mist.png");
+  background-image: url("../Images/mist.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .background-Rain,
 .background-Drizzle,
 .background-Fog {
-  background-image: url("../Images/rain-drizzle-fog.png");
+  background-image: url("../Images/rain-drizzle-fog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

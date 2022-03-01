@@ -19,8 +19,9 @@ return (
             value={query}
             placeholder="City name"
             id="search-input1"
+            pattern="^[a-zA-Z]+$"
             />
-        <button className="srch-btn fa fa-search" onClick={getWeather}></button>
+        <button type="submit" className="srch-btn fa fa-search" onClick={getWeather}></button>
     </form>
 );
 }

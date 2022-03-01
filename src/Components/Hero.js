@@ -1,35 +1,10 @@
 import React from "react";
 import '../Styles/Hero.css';
 
-// Components
-
-// Images and Icons
-import i01d from '../Images/icons/i01d.png';
-import i01n from '../Images/icons/i01n.png';
-import i02d from '../Images/icons/i02d.png';
-import i02n from '../Images/icons/i02n.png';
-import i03d from '../Images/icons/i03d.png';
-import i03n from '../Images/icons/i03d.png';
-import i04d from '../Images/icons/i04d.png';
-import i04n from '../Images/icons/i04d.png';
-import i09d from '../Images/icons/i09d.png';
-import i09n from '../Images/icons/i09d.png';
-import i10d from '../Images/icons/i10d.png';
-import i10n from '../Images/icons/i10n.png';
-import i11d from '../Images/icons/i11d.png';
-import i11n from '../Images/icons/i11d.png';
-import i13d from '../Images/icons/i13d.png';
-import i13n from '../Images/icons/i13d.png';
-import i50d from '../Images/icons/i50d.png';
-import i50n from '../Images/icons/i50d.png';
-
 
 function Hero({
     urlIcon,
-    setUrlIcon,
     weather,
-    WeatherIconsLocalPath,
-    pathIcon
 }) {
 
     /* Getting current date */
@@ -54,7 +29,7 @@ return (
     
      {(urlIcon) ? (
         <img className="weather-icon" src={urlIcon}  alt={weather}></img>
-     ) : (<img className="weather-icon" alt="" ></img>)}
+     ) : false}
 
 </div>
 );

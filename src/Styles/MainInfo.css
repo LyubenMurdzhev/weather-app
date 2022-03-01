@@ -34,11 +34,16 @@
   border-image-slice: 1;
 }
 
-.item > span {
+.static-span {
   /*Position*/
   /*Size*/
   /*Misc*/
   color: #19b0fe;
+}
+
+.dynamic-span {
+  margin-right: 1rem;
+  margin-left: 0.3rem;
 }
 
 .error-container {
